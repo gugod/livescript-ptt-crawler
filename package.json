@@ -1,0 +1,14 @@
+{
+  "name": "livescript-ptt-crawler",
+  "subdomain": "gugod.org",
+  "version": "0.1.1-1",
+  "engines": {
+    "node": "4.1.x",
+    "npm": "2.13.x"
+  },
+  "analyze": false,
+  "dependencies": {
+      "walkdir": "0.0.10",
+      "cheerio": "0.10.3"
+  }
+}
