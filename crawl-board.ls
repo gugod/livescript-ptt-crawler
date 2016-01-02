@@ -25,7 +25,7 @@ harvest_board_indices = (board_url, board_name, cb) ->
 
       last_page = ret.pop();
       for i from ret[0]["page_number"] + 1 til last_page["page_number"] - 1
-        ret.push { page_number: i, url: "#{ptt_url}/bbs/#{board_name}/index/#{i}.html" }
+        ret.push { page_number: i, url: "#{ptt_url}/bbs/#{board_name}/index#{i}.html" }
 
       ret.push(last_page)
       cb(ret)
@@ -58,4 +58,4 @@ const board_name = process.argv[2],
 
 harvest_board_indices "#{ptt_url}/bbs/#{board_name}/index.html", board_name, (board_indices) ->
   for i from 0 til board_indices.length
-    harvest_articles board_indices[i]["url"], board_name, (a) -> download_articles(a, board_name, output_dir)
+    harvest_articles board_indices[i].url, board_name, (a) -> download_articles(a, board_name, output_dir)
